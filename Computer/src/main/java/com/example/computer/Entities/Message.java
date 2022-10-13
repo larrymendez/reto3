@@ -1,18 +1,13 @@
-package com.example.computer.Modelo;
+package com.example.computer.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "message")
 
-public class Message {
+public class Message implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +15,7 @@ public class Message {
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name = "toolId")
+    @JoinColumn(name = "computerId")
     @JsonIgnoreProperties({"messages","reservations"})
     private Computer computer;
 
@@ -44,21 +39,4 @@ public class Message {
     public void setMessageText(String messageText) {
         this.messageText = messageText;
     }
-
-    public Computer getTool() {
-        return computer;
-    }
-
-    public void setTool(Computer computer) {
-        this.computer = computer;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
 }

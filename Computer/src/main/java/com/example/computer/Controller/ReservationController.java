@@ -1,6 +1,6 @@
 package com.example.computer.Controller;
 
-import com.example.computer.Modelo.Reservation;
+import com.example.computer.Entities.Reservation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.Modelo.Reservation;

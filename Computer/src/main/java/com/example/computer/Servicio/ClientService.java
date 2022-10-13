@@ -4,8 +4,7 @@ import com.example.Repositorio.ClientRepository;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.computer.Modelo.Client;
-import com.example.computer.Repositorio.ClientRepository;
+import com.example.computer.Entities.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.Modelo.Client;

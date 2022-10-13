@@ -1,19 +1,16 @@
-package com.example.computer.Modelo;
+package com.example.computer.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 
 @Entity
 @Table(name = "reservation")
 
-public class Reservation {
+public class Reservation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +20,7 @@ public class Reservation {
     private String status = "created";
 
     @ManyToOne
-    @JoinColumn(name = "toolId")
+    @JoinColumn(name = "computerId")
     @JsonIgnoreProperties("reservations")
     private Computer computer;
 
@@ -31,8 +28,6 @@ public class Reservation {
     @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
-
-    private String score;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -65,29 +60,4 @@ public class Reservation {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public Computer getTool() {
-        return computer;
-    }
-
-    public void setTool(Computer computer) {
-        this.computer = computer;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-    public String getScore() {
-        return score;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
-    }
-
 }

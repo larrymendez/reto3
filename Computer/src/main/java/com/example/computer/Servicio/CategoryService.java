@@ -3,7 +3,7 @@ package com.example.computer.Servicio;
 import com.example.Repositorio.CategoryRepository;
 import java.util.List;
 
-import com.example.computer.Modelo.Category;
+import com.example.computer.Entities.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.Modelo.Category;

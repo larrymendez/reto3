@@ -1,6 +1,6 @@
 package com.example.computer.Controller;
 
-import com.example.computer.Modelo.Message;
+import com.example.computer.Entities.Message;
 import com.example.computer.Servicio.MessageService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

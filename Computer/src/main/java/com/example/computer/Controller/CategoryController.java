@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.Modelo.Category;
 import java.util.Optional;
 
-import com.example.computer.Modelo.Category;
+import com.example.computer.Entities.Category;
 import com.example.computer.Servicio.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
